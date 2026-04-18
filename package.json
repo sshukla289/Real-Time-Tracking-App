@@ -1,0 +1,20 @@
+{
+  "name": "leafleat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "ngrok:url": "powershell -Command \"((Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4040/api/tunnels | ConvertFrom-Json).tunnels | Where-Object { $_.proto -eq 'https' }).public_url\"",
+    "ngrok:tunnels": "powershell -Command \"Invoke-WebRequest -UseBasicParsing http://127.0.0.1:4040/api/tunnels | Select-Object -ExpandProperty Content\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}
