@@ -74,6 +74,18 @@ node app.js
 http://localhost:3000
 ```
 
+## Live Demo
+
+Temporary live demo URL:
+
+```text
+https://ramp-till-travel.ngrok-free.dev
+```
+
+- This demo works only while the local ngrok tunnel is running.
+- The public URL usually changes whenever ngrok is restarted.
+- If the link stops working, run `npm run ngrok:url` to print the current HTTPS tunnel URL.
+
 ## Testing on Another Device
 
 If you want to test the app on a phone or another laptop on the same network, you can try your local network IP:
