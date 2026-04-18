@@ -32,6 +32,16 @@ Real-Time Tracking App is a real-time location tracking web app built with Node.
 - User-facing status messages for geolocation errors
 - Faster initial location fetch followed by live tracking updates
 
+## Preview
+
+Add a screenshot or GIF of the app here before sharing the project widely.
+
+Example markdown:
+
+```md
+![Real-Time Tracking App Preview](./docs/preview.gif)
+```
+
 ## Project Structure
 
 ```text
@@ -133,6 +143,10 @@ The main runtime dependencies used in this project are:
 - `socket.io`
 
 Leaflet is loaded from a CDN in the browser.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
 
 ## Future Improvements
 
