@@ -17,3 +17,8 @@ Desktop.ini
 
 .vscode/
 .idea/
+
+# Temporary demo screenshot exports
+docs/*.png
+docs/*.jpg
+docs/*.webp

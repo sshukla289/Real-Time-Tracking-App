@@ -3,19 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0f766e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Real-Time Tracking App</title>
     <link rel="stylesheet" href="/css/style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" integrity="sha512-h9FcoyWjHcOcmEVkxOfTLnmZFWIH0iZhZT1H2TbOq55xssQGEJHEaIm+PgoUaZbRvQTNTluNOEfb1ZRy6D3BOw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
+    <section id="welcome-card" class="welcome-card" hidden>
+        <p class="eyebrow">Welcome</p>
+        <h1>Real-time team tracking for clearer, faster coordination.</h1>
+        <p class="welcome-card__copy">Share your live location once, follow teammates smoothly, and switch routes in seconds from a map designed to feel clean on mobile.</p>
+        <div class="welcome-card__actions">
+            <button id="welcome-continue-button" class="welcome-card__button" type="button">Continue</button>
+        </div>
+    </section>
+    <section id="name-card" class="name-card">
+        <p class="eyebrow">Live Team Tracking</p>
+        <h1>Share your location with your real name.</h1>
+        <p class="name-card__copy">Each person gets a distinct marker color, and distances are shown directly on the map for quick coordination.</p>
+        <form id="name-form" class="name-form">
+            <label class="sr-only" for="name-input">Your real name</label>
+            <input id="name-input" name="displayName" type="text" maxlength="24" placeholder="Enter your real name" autocomplete="name" />
+            <button type="submit">Join map</button>
+        </form>
+    </section>
+    <section id="map-panel" class="map-panel">
+        <div class="map-panel__top">
+            <p class="eyebrow">Overview</p>
+            <button id="map-panel-toggle" class="map-panel__toggle" type="button" aria-controls="map-panel" aria-expanded="true">Hide</button>
+        </div>
+        <div class="map-panel__row">
+            <span class="map-panel__value" id="active-users-value">00</span>
+            <span class="map-panel__label">active users</span>
+        </div>
+        <p class="map-panel__hint" id="map-hint">Join with your real name to see color-coded live markers and distance labels.</p>
+        <div class="route-panel">
+            <div class="route-panel__header">
+                <h2>Route to teammate</h2>
+                <button id="clear-route-button" class="route-panel__clear" type="button" hidden>Clear</button>
+            </div>
+            <div id="travel-mode-selector" class="travel-modes" aria-label="Travel mode"></div>
+            <div id="route-summary" class="route-summary">
+                <strong id="route-summary-title">No route selected</strong>
+                <p id="route-summary-meta">Tap a teammate marker on the map to start routing.</p>
+            </div>
+        </div>
+    </section>
+    <button id="map-panel-reopen" class="map-panel-reopen" type="button" hidden>Show overview</button>
     <div id="status-message" class="status-message" hidden></div>
     <div id="map"></div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" integrity="sha512-BwHfrr4c9kmRkLw6iXFdzcdWV/PGkVgiIyIWLLlTSXzWQzxuSg4DiQUCpauz/EWjgk5TYQqX/kvn9pG1NpYfqg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
     <script src="https://cdn.socket.io/4.8.3/socket.io.min.js" integrity="sha384-kzavj5fiMwLKzzD1f8S7TeoVIEi7uKHvbTA3ueZkrzYq75pNQUiUi6Dy98Q3fxb0" crossorigin="anonymous"></script>
-    
     <script src="/js/script.js"></script>
 
 </body>
